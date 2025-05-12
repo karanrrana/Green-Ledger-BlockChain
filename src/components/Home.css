@@ -1,0 +1,182 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0b0f19;
+  /* Deep dark navy */
+  color: #c4c7cf;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #141a26;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #19f57a;
+  /* Subtle neon green */
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  background: url('/public/picnw.webp') center/cover no-repeat;
+  /* Update the path to your image */
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  /* Darker overlay for contrast */
+}
+
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #19f57a;
+  /* Neon Green */
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #b0b3b8;
+  margin: 1rem 0 2rem;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #19f57a, #00d4ff);
+  /* Neon Green to Cyan */
+  color: #121212;
+  padding: 0.9rem 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(25, 245, 122, 0.8);
+}
+
+/* Info Section */
+.info {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #141a26;
+}
+
+.info h3 {
+  font-size: 2rem;
+  color: #00d4ff;
+  /* Cool cyan */
+}
+
+.info p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: auto;
+  color: #b0b3b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.4rem;
+  }
+
+  .info h3 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Full Page Fade-In Effect */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInMove 1.2s ease-out forwards;
+}
+
+@keyframes fadeInMove {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar Separate Fade-In */
+.navbar-fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Hero Section Slide-In */
+.hero-content {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1.5s ease-out 0.5s forwards;
+}
+
+/* Other animations (already exist) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
